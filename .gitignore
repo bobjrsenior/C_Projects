@@ -1,0 +1,7 @@
+# Compiled Source Files #
+#########################
+*.o
+
+# Swap Files #
+##############
+*.swp
