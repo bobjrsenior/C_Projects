@@ -17,14 +17,7 @@
  */
 
 
-struct Node {
-	struct Node *parent;
-	struct Node *leftChild;
-	struct Node *rightChild;
-};				/* ----------  end of struct Node  ---------- */
-
-typedef struct Node Node;
-
+#include "Binary_Search_Tree.h"
 
 /* 
  * ===  FUNCTION  ======================================================================
@@ -42,11 +35,11 @@ void createNode ( Node *node ){
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  createNewNode
- *  Description: iCreates a new Node and returns a pointer to it 
+ *  Description: Creates a new Node and returns a pointer to it 
  * =====================================================================================
  */
 Node* createNewNode (){
 	Node *node = (Node*)malloc(sizeof(Node));
 	createNode(node);
-	return node>;
+	return node;
 }/* -----  end of function createNewNode  ----- */
