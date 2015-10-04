@@ -25,7 +25,8 @@
  *  Description: Uses a pointer to a node and modifies it with default values 
  * =====================================================================================
  */
-void createNode ( Node *node ){
+void createNode ( Node* node ){
+	node->value = 0;
 	node->parent = NULL;
 	node->leftChild = NULL;
 	node->rightChild = NULL;
@@ -39,7 +40,59 @@ void createNode ( Node *node ){
  * =====================================================================================
  */
 Node* createNewNode (){
-	Node *node = (Node*)malloc(sizeof(Node));
+	Node* node = (Node*)malloc(sizeof(Node));
 	createNode(node);
 	return node;
 }/* -----  end of function createNewNode  ----- */
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  createNewNodeValue
+ *  Description: Created a new node with a given value 
+ * =====================================================================================
+ */
+Node* createNewNodeValue ( int value ){
+	Node* node = (Node*)malloc(sizeof(Node));
+	createNode(node);
+	node->value = value;
+	return node;
+}/* -----  end of function createNewNodeValue  ----- */
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  setValue
+ *  Description:  Sets the value of a node
+ * =====================================================================================
+ */
+void setValue ( Node* node, int value ){
+	node->value = value;
+}/* -----  end of function setValue  ----- */
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  addNode
+ *  Description: Adds a node to the BST 
+ * =====================================================================================
+ */
+void addNode ( Node* root, Node* child ){
+	if(root->value > child->value){
+		if(root->leftChild != NULL){
+			addNode(root->leftChild, child);
+		}else{
+			root->leftChild = child;
+			child->parent = root;
+		}
+	}else{
+		if(root->rightChild != NULL){
+			addNode(root->rightChild, child);
+		}else{
+			root->rightChild = child;
+			child->parent = root;
+		}
+	}
+}/* -----  end of function addNode  ----- */
+
+
+
