@@ -20,9 +20,9 @@
 
 struct Node {
 	int value;
-        struct Node* parent;
+        struct Node** parent;
         struct Node* leftChild;
-        struct Node** rightChild;
+        struct Node* rightChild;
 };                              /*  ----------  end of struct Node  ---------- */
   
 typedef struct Node Node;

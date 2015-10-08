@@ -94,3 +94,44 @@ void addNode ( Node* root, Node* child ){
 	}
 }/* -----  end of function addNode  ----- */
 
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  Remove
+ *  Description: Removes a node from the BST 
+ * =====================================================================================
+ */
+void Remove ( Node* node ){
+	if(node->leftChild == NULL){
+		if(node->rightChild == NULL){
+			if(node->parent != NULL){
+				*node->parent = NULL;
+			}
+			free(node);
+		}else{
+			if(node->parent != NULL){
+				node->parent = &node->rightChild;
+				node->rightChild->parent = node->parent;
+			}else{
+				node->rightChild->parent = NULL;
+			}
+			free(node);
+		}
+		
+	}else{
+		if(node->rightChild == NULL){
+			if(node->parent != NULL){
+				node->parent = &node->leftChild;
+				node->leftChild->parent = node->parent;
+			}else{
+				node->leftChild->parent = NULL;
+			}
+			free(node);
+		}else{
+			//Find the min node in the left subtree and replace the current node with it	
+		}
+	}
+	
+	
+}/* -----  end of function Remove  ----- */
