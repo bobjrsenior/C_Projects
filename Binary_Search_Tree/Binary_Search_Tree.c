@@ -82,17 +82,15 @@ void addNode ( Node* root, Node* child ){
 			addNode(root->leftChild, child);
 		}else{
 			root->leftChild = child;
-			child->parent = root;
+			child->parent = &root->leftChild;
 		}
 	}else{
 		if(root->rightChild != NULL){
 			addNode(root->rightChild, child);
 		}else{
 			root->rightChild = child;
-			child->parent = root;
+			child->parent = &root->rightChild;
 		}
 	}
 }/* -----  end of function addNode  ----- */
-
-
 
