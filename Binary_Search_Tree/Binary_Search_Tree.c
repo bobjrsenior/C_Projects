@@ -135,3 +135,28 @@ void Remove ( Node* node ){
 	
 	
 }/* -----  end of function Remove  ----- */
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  findMin
+ *  Description: Returns a pointer to the Node with the minimum value in the BST 
+ * =====================================================================================
+ */
+Node* findMin ( Node* root ){
+	if(root->leftChild != NULL){
+		return findMin(root->leftChild);
+	}
+	return root;
+}/* -----  end of function findMin  ----- */
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  findMinValue
+ *  Description: Returns the minimum value stored in the BST 
+ * =====================================================================================
+ */
+int findMinValue ( Node* root ){
+	return findMin(root)->value;
+}/* -----  end of function findMinValue  ----- */
