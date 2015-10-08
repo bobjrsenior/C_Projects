@@ -95,6 +95,16 @@ void addNode ( Node* root, Node* child ){
 }/* -----  end of function addNode  ----- */
 
 
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  addNodeValue
+ *  Description: Adds a node to the BST 
+ * =====================================================================================
+ */
+void addNodeValue ( Node* root, int value ){
+	addNode(root, createNewNodeValue(value));
+}/* -----  end of function addNodeValue  ----- */
+
 
 /* 
  * ===  FUNCTION  ======================================================================

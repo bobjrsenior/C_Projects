@@ -71,6 +71,15 @@ void addNode ( Node* root, Node* child );
 
 /* 
  * ===  FUNCTION  ======================================================================
+ *         Name:  addNodeValue
+ *  Description:  Adds a node to the BST
+ * =====================================================================================
+ */
+void addNodeValue ( Node* root, int value );
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
  *         Name:  findMin
  *  Description: Returns a pointer to the Node with the minimum value in the BST 
  * =====================================================================================

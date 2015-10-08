@@ -19,7 +19,23 @@
 #include <stdio.h>
 #include "Binary_Search_Tree.h"
 
-void minTests(Node* root);
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  populateBST
+ *  Description:  Populates a BST for testing and returns a pointer to it's root
+ * =====================================================================================
+ */
+Node* populateBST (  );
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  minTests
+ *  Description: Tests the BST functions for finding a minimum value/Node 
+ * =====================================================================================
+ */
+void minTests();
 
 int main(){
 	Node* root = createNewNodeValue(13);
@@ -38,32 +54,60 @@ int main(){
 
 /* 
  * ===  FUNCTION  ======================================================================
+ *         Name:  populateBST
+ *  Description: Populates a BST for testing and returns a pointer to it's root 
+ * =====================================================================================
+ */
+Node* populateBST (  ){
+	Node* root = createNewNodeValue(23);
+	addNodeValue(root, 17);
+	addNodeValue(root, 84);
+	addNodeValue(root, 12);
+	addNodeValue(root, 22);
+	addNodeValue(root, 57);
+	addNodeValue(root, 99);
+	addNodeValue(root, 45);
+	addNodeValue(root, 1);
+	addNodeValue(root, 7);
+	addNodeValue(root, 19);
+	addNodeValue(root, 213);
+	addNodeValue(root, 24);
+	addNodeValue(root, 14);
+	addNodeValue(root, 37);
+	addNodeValue(root, 85);
+	addNodeValue(root, 10);
+	return root;
+}/* -----  end of function populateBST  ----- */
+
+/* 
+ * ===  FUNCTION  ======================================================================
  *         Name:  minTests
  *  Description: Tests the BST functions for finding a minimum value/Node 
  * =====================================================================================
  */
-void minTests ( Node* root ){
+void minTests ( ){
+	Node* root = populateBST();
 	Node* minNode = findMin(root);
-	if(minNode->value != 4){
+	if(minNode->value != 1){
 		printf("FAILED: findMin() test\n");
 	}else{
 		printf("PASSED: findMin() test\n");
 	}
 	minNode = findMinNoRec(root);
-	if(minNode->value != 4){
+	if(minNode->value != 1){
 		printf("FAILED: findMinNoRec() test\n");
 	}else{
 		printf("PASSED: findMinNoRec() test\n");
 	}
 
 	int minValue = findMinValue(root);
-	if(minValue != 4){
+	if(minValue != 1){
 		printf("FAILED: findMinValue() test\n");
 	}else{
 		printf("PASSED: findMinValue() test\n");
 	}
 	minValue = findMinValueNoRec(root);
-	if(minValue != 4){
+	if(minValue != 1){
 		printf("FAILED: findMinValueNoRec() test\n");
 	}else{
 		printf("PASSED: findMinValueNoRec() test\n");
