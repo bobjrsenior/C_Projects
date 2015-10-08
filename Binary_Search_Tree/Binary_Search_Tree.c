@@ -98,11 +98,11 @@ void addNode ( Node* root, Node* child ){
 
 /* 
  * ===  FUNCTION  ======================================================================
- *         Name:  Remove
+ *         Name:  remove
  *  Description: Removes a node from the BST 
  * =====================================================================================
  */
-void Remove ( Node* node ){
+void remove ( Node* node ){
 	if(node->leftChild == NULL){
 		if(node->rightChild == NULL){
 			if(node->parent != NULL){
@@ -134,7 +134,7 @@ void Remove ( Node* node ){
 	}
 	
 	
-}/* -----  end of function Remove  ----- */
+}/* -----  end of function remove  ----- */
 
 
 /* 
@@ -153,6 +153,20 @@ Node* findMin ( Node* root ){
 
 /* 
  * ===  FUNCTION  ======================================================================
+ *         Name:  findMinNoRec
+ *  Description:  (No Recursion) Returns a pointer to the Node with the minimum value in the BST
+ * =====================================================================================
+ */
+Node* findMinNoRec ( Node* root ){
+	while(root->leftChild != NULL){
+		root = root->leftChild;
+	}
+	return root;
+}/* -----  end of function findMinNoRec  ----- */
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
  *         Name:  findMinValue
  *  Description: Returns the minimum value stored in the BST 
  * =====================================================================================
@@ -160,3 +174,14 @@ Node* findMin ( Node* root ){
 int findMinValue ( Node* root ){
 	return findMin(root)->value;
 }/* -----  end of function findMinValue  ----- */
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  findMinValueNoRec
+ *  Description: (No Recursion) Return the minimum value stored in the BST 
+ * =====================================================================================
+ */
+int findMinValueNoRec ( Node* root ){
+	return findMinNoRec(root)->value;
+}/* -----  end of function findMinValueNoRec  ----- */

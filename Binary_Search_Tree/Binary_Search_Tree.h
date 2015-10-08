@@ -80,8 +80,26 @@ Node* findMin ( Node* root );
 
 /* 
  * ===  FUNCTION  ======================================================================
+ *         Name:  findMinNoRec
+ *  Description: (No Recursion) Returns a pointer to the Node with the minimum value in the BST 
+ * =====================================================================================
+ */
+Node* findMinNoRec ( Node* root );
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
  *         Name:  findMinValue
  *  Description: Returns the minimum value stored in the BST 
  * =====================================================================================
  */
 int findMinValue ( Node* root );
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  findMinValueNoRec
+ *  Description: (No Recursion) Return the minimum value stored in the BST 
+ * =====================================================================================
+ */
+int findMinValueNoRec ( Node* root );
