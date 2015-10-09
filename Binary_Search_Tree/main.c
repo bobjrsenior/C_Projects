@@ -20,6 +20,14 @@
 #include "Binary_Search_Tree.h"
 
 
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  insertionTests
+ *  Description: Tests if creating/inserting Nodes into a BST works 
+ * =====================================================================================
+ */
+void insertionTests (  );
+
 
 /* 
  * ===  FUNCTION  ======================================================================
@@ -38,12 +46,52 @@ Node* populateBST (  );
 void minTests();
 
 int main(){
-
+	insertionTests();
 	minTests();	
 
 //	printf("  %d\n %d %d\n%d %d  %d\n", root->value, root->leftChild->value, root->rightChild->value, root->leftChild->leftChild->value, root->leftChild->rightChild->value, root->rightChild->rightChild->value);
 	return 0;
 }
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  insertionTests
+ *  Description: Tests if creating/inserting Nodes into a BST works 
+ * =====================================================================================
+ */
+void insertionTests (  ){
+	Node* root = createNewNode();	
+	if(root->parent != NULL || root->leftChild != NULL || root->rightChild != NULL || root->value != 0){
+		printf("FAILED: createNewNode() Test\n");
+	}else{
+		printf("PASSED: createNewNode() Test\n");
+	}
+	free(root);
+	root = createNewNodeValue(7);
+	if(root->parent != NULL || root->leftChild != NULL || root->rightChild != NULL || root->value != 7){
+		printf("FAILED: createNewNodeValue() Test\n");
+	}else{
+		printf("PASSED: createNewNodeValue() Test\n");
+	}
+	free(root);
+	root = (Node*)malloc(sizeof(Node));
+	if(root == NULL){
+		printf("Malloc Failed: May be out of memory\n");
+		return;
+	}
+	root->parent = &root;
+	root->leftChild = root;
+	root->leftChild = root;
+	root->value = 7;
+	createNode(root);
+	if(root->parent != NULL || root->leftChild != NULL || root->rightChild != NULL || root->value != 0){
+		printf("FAILED: createNode() Test\n");
+	}else{
+		printf("PASSED: createNode() Test\n");
+	}
+	free(root);
+}/* -----  end of function insertionTests  ----- */
 
 
 /* 
@@ -106,4 +154,5 @@ void minTests ( ){
 	}else{
 		printf("PASSED: findMinValueNoRec() test\n");
 	}
+	free(root);
 }/* -----  end of function minTests  ----- */
