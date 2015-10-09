@@ -45,10 +45,19 @@ Node* populateBST (  );
  */
 void minTests();
 
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  maxTests
+ *  Description: Tests the BST functions for finding a maximum value/Node 
+ * =====================================================================================
+ */
+void maxTests();
+
 int main(){
 	insertionTests();
 	minTests();	
-
+	maxTests();
 //	printf("  %d\n %d %d\n%d %d  %d\n", root->value, root->leftChild->value, root->rightChild->value, root->leftChild->leftChild->value, root->leftChild->rightChild->value, root->rightChild->rightChild->value);
 	return 0;
 }
@@ -138,6 +147,7 @@ Node* populateBST (  ){
 	return root;
 }/* -----  end of function populateBST  ----- */
 
+
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  minTests
@@ -167,6 +177,43 @@ void minTests ( ){
 	}
 	minValue = findMinValueNoRec(root);
 	if(minValue != 1){
+		printf("FAILED: findMinValueNoRec() test\n");
+	}else{
+		printf("PASSED: findMinValueNoRec() test\n");
+	}
+	free(root);
+}/* -----  end of function minTests  ----- */
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  maxTests
+ *  Description: Tests the BST functions for finding a maximum value/Node 
+ * =====================================================================================
+ */
+void maxTests ( ){
+	Node* root = populateBST();
+	Node* maxNode = findMax(root);
+	if(maxNode->value != 213){
+		printf("FAILED: findMin() test\n");
+	}else{
+		printf("PASSED: findMin() test\n");
+	}
+	maxNode = findMaxNoRec(root);
+	if(maxNode->value != 213){
+		printf("FAILED: findMinNoRec() test\n");
+	}else{
+		printf("PASSED: findMinNoRec() test\n");
+	}
+
+	int maxValue = findMaxValue(root);
+	if(maxValue != 213){
+		printf("FAILED: findMinValue() test\n");
+	}else{
+		printf("PASSED: findMinValue() test\n");
+	}
+	maxValue = findMaxValueNoRec(root);
+	if(maxValue != 213){
 		printf("FAILED: findMinValueNoRec() test\n");
 	}else{
 		printf("PASSED: findMinValueNoRec() test\n");

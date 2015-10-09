@@ -113,3 +113,39 @@ int findMinValue ( Node* root );
  * =====================================================================================
  */
 int findMinValueNoRec ( Node* root );
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  findMax
+ *  Description: Returns a pointer to the Node with the maximum value in the BST 
+ * =====================================================================================
+ */
+Node* findMax ( Node* root );
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  findMaxNoRec
+ *  Description: (No Recursion) Returns a pointer to the Node with the maximum value in the BST 
+ * =====================================================================================
+ */
+Node* findMaxNoRec ( Node* root );
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  findMaxValue
+ *  Description: Returns the maximum value stored in the BST 
+ * =====================================================================================
+ */
+int findMaxValue ( Node* root );
+
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  findMaxValueNoRec
+ *  Description: (No Recursion) Return the maximum value stored in the BST 
+ * =====================================================================================
+ */
+int findMaxValueNoRec ( Node* root );
