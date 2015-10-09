@@ -181,7 +181,7 @@ void minTests ( ){
 	}else{
 		printf("PASSED: findMinValueNoRec() test\n");
 	}
-	free(root);
+	freeBST(root);
 }/* -----  end of function minTests  ----- */
 
 
@@ -218,5 +218,5 @@ void maxTests ( ){
 	}else{
 		printf("PASSED: findMinValueNoRec() test\n");
 	}
-	free(root);
+	freeBST(root);
 }/* -----  end of function minTests  ----- */

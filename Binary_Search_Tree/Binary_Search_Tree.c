@@ -67,6 +67,24 @@ Node* createNewNodeValue ( int value ){
 	return node;
 }/* -----  end of function createNewNodeValue  ----- */
 
+
+/* 
+ * ===  FUNCTION  ======================================================================
+ *         Name:  freeBST
+ *  Description: Deallocates all Nodes in a BST 
+ * =====================================================================================
+ */
+void freeBST ( Node* root ){
+	if(root->leftChild != NULL){
+		freeBST(root->leftChild);
+	}
+	if(root->rightChild != NULL){
+		freeBST(root->rightChild);
+	}
+	free(root);
+}/* -----  end of function freeBST  ----- */
+
+
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  setValue
