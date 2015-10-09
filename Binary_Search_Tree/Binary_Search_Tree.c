@@ -165,11 +165,19 @@ void removeNode ( Node* node ){
 			}
 			free(node);
 		}else{
-			//Find the min node in the left subtree and replace the current node with it	
+			//Find the max node in the left subtree and replace the current node with it
+			Node* minNode = findMin(node);
+			node->value = minNode->value;
+			if(minNode->leftChild != NULL){
+				*minNode->parent = minNode->leftChild;
+				minNode->leftChild->parent = minNode->parent;
+			}
+			else{
+				*minNode->parent = NULL;
+			}
+			free(minNode);
 		}
-	}
-	
-	
+	}	
 }/* -----  end of function removeNode  ----- */
 
 
