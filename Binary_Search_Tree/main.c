@@ -90,6 +90,23 @@ void insertionTests (  ){
 	}else{
 		printf("PASSED: createNode() Test\n");
 	}
+	setValue(root, 7);
+	addNodeValue(root, 4);
+	addNodeValue(root, 9);
+	addNodeValue(root, 2);
+	addNodeValue(root, 5);
+	addNodeValue(root, 11);
+	addNodeValue(root, 8);
+	if(root->leftChild->value != 4 || root->leftChild->leftChild->value != 2 || root->leftChild->rightChild->value != 5){
+		printf("FAILED: addNodeValue() left child test\n");
+	}else{
+		printf("PASSED: addNodeValue() left child test\n");
+	}
+	if(root->rightChild->value != 9 || root->rightChild->leftChild->value != 8 || root->rightChild->rightChild->value != 11){
+		printf("FAILED: addNodeValue() right child test\n");
+	}else{
+		printf("PASSED: addNodeValue() right child test\n");
+	}
 	free(root);
 }/* -----  end of function insertionTests  ----- */
 
