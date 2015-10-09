@@ -41,6 +41,10 @@ void createNode ( Node* node ){
  */
 Node* createNewNode (){
 	Node* node = (Node*)malloc(sizeof(Node));
+	if(node == NULL){
+		printf("Malloc Failed: Possibly out of memory\n");
+		return NULL;
+	}
 	createNode(node);
 	return node;
 }/* -----  end of function createNewNode  ----- */
@@ -54,6 +58,10 @@ Node* createNewNode (){
  */
 Node* createNewNodeValue ( int value ){
 	Node* node = (Node*)malloc(sizeof(Node));
+	if(node == NULL){
+		printf("Malloc Failed: Possibly out of memory\n");
+		return NULL;
+	}
 	createNode(node);
 	node->value = value;
 	return node;
@@ -108,11 +116,11 @@ void addNodeValue ( Node* root, int value ){
 
 /* 
  * ===  FUNCTION  ======================================================================
- *         Name:  remove
+ *         Name:  removeNode
  *  Description: Removes a node from the BST 
  * =====================================================================================
  */
-void remove ( Node* node ){
+void removeNode ( Node* node ){
 	if(node->leftChild == NULL){
 		if(node->rightChild == NULL){
 			if(node->parent != NULL){
@@ -144,7 +152,7 @@ void remove ( Node* node ){
 	}
 	
 	
-}/* -----  end of function remove  ----- */
+}/* -----  end of function removeNode  ----- */
 
 
 /* 
